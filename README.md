@@ -6,7 +6,7 @@
 
 ### Prerequisites ###
 
-To use this code, you need:
+To use this code, you need access to:
 
 + TensorFlow 2.0 or higher
 + Python 3.5-3.7
