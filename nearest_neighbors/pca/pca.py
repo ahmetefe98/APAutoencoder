@@ -31,22 +31,22 @@ x = x.reshape(-1,3072)
 
 pca = PCA(128)
 pca.fit(x)
-x = pca.transform(x)
+x_transformed = pca.transform(x)
 
 n = randrange(60000)
 print(n)
-query = x[n]
+query = x_transformed[n]
 label = y[n]
 n_neigh = 6
-x = x.reshape(-1, 128)
+x_transformed = x_transformed.reshape(-1, 128)
 query = query.reshape(1,128)
-nbrs = NearestNeighbors(n_neighbors=n_neigh, n_jobs = -1).fit(x)
+nbrs = NearestNeighbors(n_neighbors=n_neigh, n_jobs = -1).fit(x_transformed)
 distances, indices = nbrs.kneighbors(np.array(query))
 n_label_names = [label_names[y[i]] for i in indices]
 closest_images = x[indices]
 closest_images = closest_images.reshape(-1,32,32,3)
 
-plt.imshow(query.reshape(32,32,3))
+plt.imshow(x[n].reshape(32,32,3))
 plt.title(label_names[label])
 plt.show()
 plt.figure(figsize=(20, 6))
