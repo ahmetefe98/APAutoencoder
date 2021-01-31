@@ -15,7 +15,7 @@ for i in range(100):
 
 
 print('autoencoder:')
-with open('./autoencoder/a32.txt', 'r') as f:
+with open('./autoencoder/ae_list_of_norm.txt', 'r') as f:
     a32 = json.load(f)
 
 print('min: ', min(a32))
