@@ -10,7 +10,7 @@ x_test = x_test.astype('float32')
 x_train = x_train / 255.
 x_test = x_test / 255.
 x = np.concatenate((x_train,x_test))
-
+y = np.concatenate((y_train,y_test))
 #Implement Convolutional AE
 encoder_ae, model_ae = general_ae()
 model_ae.load_weights('ae.weigths.h5')
@@ -35,8 +35,8 @@ codes = np.concatenate((codes1,codes2))
 size_of_middle_layer = 128
 n = randrange(50000)
 print(n)
-query = x_train[n]
-label = y_train[n]
+query = x[n]
+label = y[n]
 query_code = encoder_ae.predict(query.reshape(1,32,32,3))
 
 n_neigh = 6
@@ -44,7 +44,7 @@ codes = codes.reshape(-1, size_of_middle_layer*8*8)
 query_code = query_code.reshape(1, size_of_middle_layer*8*8)
 nbrs = NearestNeighbors(n_neighbors=n_neigh).fit(codes)
 distances, indices = nbrs.kneighbors(np.array(query_code))
-n_label_names = [label_names[y_train[i]] for i in indices]
+n_label_names = [label_names[y[i]] for i in indices]
 closest_images = x[indices]
 closest_images = closest_images.reshape(-1,32,32,3)
 
