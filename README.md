@@ -11,11 +11,12 @@ To use this code you need:
 
 ### Folder strucutre and content  ###
 
-+ 
++ "cluster": in this folder is an approch to cluster images with an autoencoder, for clarity the code is split in two files. In functions.py are the functions and imports which are needed, in main.py is the main code. Through the save weights the models must not be fit and only load and compile. Moreover, the figure 6 "Vergleich echte Klasse und vermutetet Klasse CIFAR-100" from page 8 of the report is in a hig resolution in this folder.  
++ "data": is a file to get all classnames with their classnumber and a file 
 
 
 
-### Authors ###
+### Author ###
 
 + Ahmet Efe, email: im224@stud.uni-heidelberg.de
 
