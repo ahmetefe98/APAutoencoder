@@ -2,6 +2,7 @@
 
 + in this folder are the code for the advanced practial 
 + for more information about the practial please read the report.pdf (german)
++ all used sources are written in the report
 
 ### Prerequisites ###
 
