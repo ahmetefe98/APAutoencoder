@@ -39,5 +39,5 @@ for i in range(len(x)):
     norm = sum(sum(sum(abs(diff))))
     list_of_norm.append(norm)
 
-with open('pca_list_of_norm.txt', 'w') as f:
+with open('ae_list_of_norm.txt', 'w') as f:
     f.write(json.dumps(list_of_norm))
